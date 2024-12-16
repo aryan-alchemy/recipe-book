@@ -1,0 +1,26 @@
+<section class="recipe-details">
+  <app-page-header title="{{title}}"></app-page-header>
+  <div *ngIf="recipe; else noRecips" class="details-card">
+    <h2>Recipe Details</h2>
+    <div class="detail-item">
+      <strong>ID:</strong> <span>{{ recipe.id }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Title:</strong> <span>{{ recipe.title }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Description:</strong> <span>{{ recipe.description }}</span>
+    </div>
+    <div class="detail-item">
+      <strong>Ingredients:</strong> <span>{{ recipe.ingredients }}</span>
+    </div>
+    <a href="/" class="back-btn">Back to Recipes</a>
+  </div>
+
+  <ng-template #noRecips>
+    <div class="container details-card no-data">
+      <p>No recipe found. Please check the URL or go back to the recipe list.</p>
+      <a href="/" class="back-btn">Back to Recipes</a>
+    </div>
+  </ng-template>
+</section>

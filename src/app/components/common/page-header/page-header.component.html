@@ -1,0 +1,18 @@
+<header>
+  <div class="container">
+    <a href="/">
+      <img
+        src="app/assets/images/logo.png"
+        alt="Recipe book"
+        loading="eager"
+        height="65px"
+        width="65px"
+        title="logo"
+      />
+    </a>
+    <h2>{{title}}</h2>
+    <div>
+      <button *ngIf="isProfilePage" (click)="navigateToAdd()">Add Recipe</button>
+    </div>
+  </div>
+</header>

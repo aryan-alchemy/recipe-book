@@ -1,0 +1,55 @@
+@import "../../assets/style/variables.scss";
+
+.recipe-details {
+  .details-card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid $dark;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px $light;
+    background-color: #fff;
+
+    &.no-data {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: $primary;
+    }
+
+    .detail-item {
+      margin-bottom: 15px;
+      font-size: 16px;
+
+      strong {
+        font-weight: 600;
+        margin-right: 10px;
+      }
+    }
+  }
+  .back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: gray;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+  p {
+    text-align: center;
+    color: #999;
+  }
+}

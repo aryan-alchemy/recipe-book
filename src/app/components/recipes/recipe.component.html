@@ -1,0 +1,15 @@
+<section class="recipes">
+  <app-page-header
+    title="Recipes"
+    [isProfilePage]="true"
+  ></app-page-header>
+  <div class="container">
+    <app-common-table
+      [data]="recipes"
+      (edit)="navigateToEdit($event)"
+      (view)="navigateToDetails($event)"
+      (delete)="deleteRecipeItem($event)"
+    >
+    </app-common-table>
+  </div>
+</section>

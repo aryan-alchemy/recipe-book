@@ -1,0 +1,40 @@
+<section class="add-recipe">
+  <app-page-header title="Add Recipe"></app-page-header>
+  <div class="container form-container">
+    <form [formGroup]="recipeForm" (ngSubmit)="save()">
+      <label>Title:*</label>
+      <input
+        type="text"
+        formControlName="title"
+        placeholder="Enter Title"
+        class="form-control"
+      />
+      <div *ngIf="title?.invalid && (title?.dirty || title?.touched)" class="error">
+        <div *ngIf="title?.errors?.['required']">Title is required.</div>
+        <div *ngIf="title?.errors?.['minlength']">Title must be at least 3 characters long.</div>
+      </div>
+
+      <label>Description:*</label>
+      <textarea
+        formControlName="description"
+        placeholder="Enter description"
+        class="form-control"
+      ></textarea>
+      <div *ngIf="description?.invalid && (description?.dirty || description?.touched)" class="error">
+        <div *ngIf="description?.errors?.['required']">Description is required.</div>
+      </div>
+
+      <label>Ingredients:*</label>
+      <input
+        type="text"
+        formControlName="ingredients"
+        placeholder="Enter Ingredients"
+        class="form-control"
+      />
+      <div *ngIf="ingredients?.invalid && (ingredients?.dirty || ingredients?.touched)" class="error">
+        <div *ngIf="ingredients?.errors?.['required']"> Ingredients is required.</div>
+      </div>
+      <button type="submit" [disabled]="recipeForm.invalid">Save</button>
+    </form>
+  </div>
+</section>

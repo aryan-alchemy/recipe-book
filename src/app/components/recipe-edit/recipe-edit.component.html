@@ -1,0 +1,26 @@
+<section class="edit-recipe">
+  <app-page-header title="{{title}}"></app-page-header>
+  <div class="container form-container" *ngIf="recipeId && recipeDetails">
+    <form>
+      <label>Title:</label>
+      <input
+        [(ngModel)]="recipeDetails.title"
+        required
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <label>description:</label>
+      <textarea
+        [(ngModel)]="recipeDetails.description"
+        [ngModelOptions]="{ standalone: true }"
+      ></textarea>
+      <label>Ingredients:</label>
+      <input
+        [(ngModel)]="recipeDetails.ingredients"
+        required
+        type="text"
+        [ngModelOptions]="{ standalone: true }"
+      />      
+      <button type="submit" (click)="save()">Save</button>
+    </form>
+  </div>
+</section>
